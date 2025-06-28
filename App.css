@@ -1,0 +1,188 @@
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #ff5722;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Filter Buttons */
+.menu-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.filter-button {
+  padding: 12px 25px;
+  background-color: #eeeeee;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #d6d6d6;
+  transform: translateY(-2px);
+}
+
+.filter-button:active {
+  transform: scale(0.98);
+}
+
+/* Food Grid Layout */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 10px;
+}
+
+/* Individual Food Card */
+.food-grid .food-item {
+  background-color: #fff7e6;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid transparent;  /* reserve space for border */
+  box-sizing: border-box;          /* include border in size */
+}
+
+.food-grid .food-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  border: 2px solid black;         /* black border on hover */
+}
+
+.food-grid .food-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.food-grid .food-item h3 {
+  font-size: 1.4em;
+  color: #222;
+  margin: 10px 0 5px;
+}
+
+.food-grid .food-item p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.food-grid .food-item .food-price {
+  color: #e53935;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+/* No Food Message */
+.no-food-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  margin-top: 40px;
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  padding: 25px 0;
+  text-align: center;
+  font-size: 0.95em;
+  color: #ddd;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Navigation Links */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  color: #ff7043;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #e64a19;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-button {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .app-header h1 {
+    font-size: 2em;
+  }
+}
